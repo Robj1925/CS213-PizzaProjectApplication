@@ -6,5 +6,15 @@ public abstract class Pizza implements Customizable {
     private Crust crust;
     private Size size;
 
+    public boolean addTopping(Topping t) {
+        toppings = new ArrayList<>();
+        this.toppings.add(t);
+        return false;
+    }
+
     public abstract double price();
+
+    protected ArrayList<Topping> getToppings(){
+        return toppings;
+    }
 }

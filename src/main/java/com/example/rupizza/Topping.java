@@ -1,4 +1,6 @@
 package com.example.rupizza;
 
-public class Topping {
+public enum Topping {
+        SAUSAGE, PEPPERONI,GREENPEPPER, ONION, MUSHROOM, BBQCHICKEN, PROVOLONE, CHEDDAR, BEEF, HAM
+
 }

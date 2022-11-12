@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="516.0" prefWidth="523.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rupizza.HelloController">
+<VBox alignment="CENTER" prefHeight="516.0" prefWidth="523.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rupizza.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -46,6 +46,12 @@
             </image>
          </ImageView>
          <Button mnemonicParsing="false" text="Chicago Style Pizza Selector" GridPane.rowIndex="3" />
+         <ImageView fitHeight="133.0" fitWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <image>
+               <Image url="@../../../images/newyok-pizza.jpg" />
+            </image>
+         </ImageView>
+         <Button mnemonicParsing="false" text="New York Style Pizza Selector" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       </children>
    </GridPane>
 </VBox>
