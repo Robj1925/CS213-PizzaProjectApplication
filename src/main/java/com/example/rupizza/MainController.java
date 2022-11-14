@@ -11,8 +11,19 @@ public class MainController {
     protected void onCurrentOrderButtonClick() {
         welcomeText.setText("Open Current Order Window!");
     }
+
     @FXML
     protected void onStoreOrderButtonClick() {
         welcomeText.setText("Welcome to Store OrderApplication!");
+    }
+
+    @FXML
+    protected void chicagoButtonClick() {
+        welcomeText.setText("Open Current Order Window!");
+    }
+
+    @FXML
+    protected void newyorkButtonClick() {
+        welcomeText.setText("Open Current Order Window!");
     }
 }

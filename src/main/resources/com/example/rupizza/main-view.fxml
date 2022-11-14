@@ -45,13 +45,13 @@
                <Image url="@../../../images/chicago-style.jpg" />
             </image>
          </ImageView>
-         <Button mnemonicParsing="false" text="Chicago Style Pizza Selector" GridPane.rowIndex="3" />
+         <Button mnemonicParsing="false" onAction="#chicagoButtonClick" text="Chicago Style Pizza Selector" GridPane.rowIndex="3" />
          <ImageView fitHeight="133.0" fitWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <image>
                <Image url="@../../../images/newyok-pizza.jpg" />
             </image>
          </ImageView>
-         <Button mnemonicParsing="false" text="New York Style Pizza Selector" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         <Button mnemonicParsing="false" onAction="#newyorkButtonClick" text="New York Style Pizza Selector" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       </children>
    </GridPane>
 </VBox>
