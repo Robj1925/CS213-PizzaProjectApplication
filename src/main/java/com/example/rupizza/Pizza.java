@@ -6,12 +6,32 @@ public abstract class Pizza implements Customizable {
     private Crust crust;
     private Size size;
 
-    public boolean addTopping(Topping t) {
-        toppings = new ArrayList<>();
-        this.toppings.add(t);
-        return false;
-    }
 
+    public int getSize() { //gets size of toppings arraylist (for testing purposes)
+        return toppings.size();
+    }
+    public void init() { //init arraylist, crust, and size object
+        this.toppings = new ArrayList<>();
+        crust = new Crust();
+        size = new Size();
+    }
+    public void setCrust(String c) {
+        this.crust.setCrust(c);
+    }
+    public String getCrust() {
+      return this.crust.getCrust();
+    }
+    public String getCurrentSize() { //gets size of pizza
+        return size.getCurrentSize();
+    }
+    public void setCurrentSize(String s) {
+        this.size.setCurrentSize(s);
+    }
+    public void printToppings() {
+        for (Topping t : getToppings()) {
+            System.out.println(t);
+        }
+    }
     public abstract double price();
 
     protected ArrayList<Topping> getToppings(){

@@ -2,15 +2,19 @@ package com.example.rupizza;
 
 public class ChicagoPizza implements PizzaFactory{
     @Override
-    public Pizza createDeluxe() {
+    public Pizza createDeluxe() { //creates Chicago Style Deluxe flavor with preset toppings and Crust
         Pizza pizza = new Deluxe();
-
-        return null;
+        pizza.setCrust("deepdish");
+        pizza.setCurrentSize("small");
+        return pizza;
     }
 
     @Override
     public Pizza createMeatzza() {
-        return null;
+        Pizza pizza = new Meatzza();
+        pizza.setCrust("stuffed");
+        pizza.setCurrentSize("large");
+        return pizza;
     }
 
     @Override

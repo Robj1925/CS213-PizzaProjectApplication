@@ -18,7 +18,15 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        Pizza pizza = new Deluxe();
+        PizzaFactory pizzaFactory = new ChicagoPizza();
+        Pizza pizza = pizzaFactory.createDeluxe();
+        System.out.println(pizza.getCrust());
+        System.out.println(pizza.price());
+
+        Pizza pizza1 = pizzaFactory.createMeatzza();
+        System.out.println(pizza1.price());
+        System.out.println(pizza.price());
+
         launch();
     }
 }
