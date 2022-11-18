@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+    private static Order currOrder = new Order();
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("main-view.fxml")); // use this to open up more windows
@@ -15,6 +16,15 @@ public class HelloApplication extends Application {
         stage.setTitle("RU Pizza"); //stage is just window
         stage.setScene(scene);
         stage.show();
+
+    }
+
+    public static void setCurrOrder(Order currOrder) {
+        HelloApplication.currOrder = currOrder;
+    }
+
+    public static Order getCurrOrder() {
+        return currOrder;
     }
 
     public static void main(String[] args) {

@@ -7,7 +7,6 @@ public class Meatzza extends Pizza{
         add(Topping.PEPPERONI);
         add(Topping.BEEF);
         add(Topping.HAM);
-
         super.printToppings();
     }
     @Override
