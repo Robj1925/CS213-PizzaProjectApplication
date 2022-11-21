@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
 
 public class ChicagoController implements Initializable {
     @FXML
-    public Button addBotton;
+    public Button addButton;
     @FXML
     public Button removeButton;
     @FXML
@@ -30,7 +30,6 @@ public class ChicagoController implements Initializable {
     private ObservableList<Topping> deluxeToppings = FXCollections.observableArrayList(Topping.GREENPEPPER,Topping.MUSHROOM,Topping.ONION,Topping.PEPPERONI,Topping.SAUSAGE);
     private ObservableList<Topping> meatzzaToppings = FXCollections.observableArrayList(Topping.BEEF,Topping.HAM,Topping.PEPPERONI,Topping.SAUSAGE);
     private ObservableList<Topping> bbqChickenToppings = FXCollections.observableArrayList(Topping.BBQCHICKEN,Topping.PROVOLONE,Topping.CHEDDAR,Topping.GREENPEPPER);
-
     private ObservableList<Topping> noToppings = FXCollections.observableArrayList();
 
     @FXML
@@ -50,12 +49,8 @@ public class ChicagoController implements Initializable {
         ObservableList<String> sizes = FXCollections.observableArrayList("small","medium","large");
         pizzaSize.setItems(sizes);
 
-      //  ObservableList<Topping> availableToppings = FXCollections.observableArrayList(Topping.CHEDDAR,Topping.BEEF,Topping.BBQCHICKEN,Topping.GREENPEPPER,Topping.HAM,Topping.MUSHROOM,Topping.ONION,Topping.PEPPERONI,Topping.PROVOLONE,Topping.SAUSAGE,Topping.BLACKOLIVES,Topping.SPINACH,Topping.PINEAPPLE);
-     //   pizzaview.getItems().addAll(availableToppings);
-          pizzaSize.getSelectionModel().selectFirst();
-          currentSize = "small";
-
-        PizzaFactory pizzaFactory = new ChicagoPizza();
+        pizzaSize.getSelectionModel().selectFirst();
+        currentSize = "small";
 
      //   HelloApplication.setCurrOrder(order1);
         order1 = HelloApplication.getCurrOrder();
@@ -72,7 +67,6 @@ public class ChicagoController implements Initializable {
             pizza.setCurrentSize(currentSize); // updates pizza size to current size selected
             priceLabel.setText("Price: " + pizza.price()); //changes label to pizza price
             crustLabel.setText("Crust: " + pizza.getCrust());
-
         } else if (pizzaSelected.equals("Meatzza")) { //checks if meatzza is selected
             availToppingsLst.getItems().setAll(noToppings); //
             selectedToppingsView.getItems().setAll(meatzzaToppings);
@@ -80,15 +74,13 @@ public class ChicagoController implements Initializable {
             pizza.setCurrentSize(currentSize);
             priceLabel.setText("Price: " + pizza.price());
             crustLabel.setText("Crust: " + pizza.getCrust());
-
         } else if (pizzaSelected.equals("Build Your Own")) {
             pizza = pizzaFactory.createBuildYourOwn();
             pizza.setCurrentSize(currentSize);
-
             selectedToppingsView.getItems().setAll(noToppings);
-               availToppingsLst.getItems().addAll(availableToppings);
-//            crustLabel.setText("Crust: " + pizza.getCrust());
+            availToppingsLst.getItems().addAll(availableToppings);
             priceLabel.setText("Price: " + pizza.price());
+            crustLabel.setText("Crust: " + pizza.getCrust());
         } else if (pizzaSelected.equals("BBQ Chicken")) {
             availToppingsLst.getItems().setAll(noToppings);
             selectedToppingsView.getItems().setAll(bbqChickenToppings);
@@ -96,12 +88,11 @@ public class ChicagoController implements Initializable {
             pizza.setCurrentSize(currentSize);
             priceLabel.setText("Price: " + pizza.price());
             crustLabel.setText("Crust: " + pizza.getCrust());
-
         }
     }
 
     public void selectSize(ActionEvent actionEvent) {
-         currentSize = pizzaSize.getSelectionModel().getSelectedItem().toString(); //gets pizza size selected
+        currentSize = pizzaSize.getSelectionModel().getSelectedItem().toString(); //gets pizza size selected
         pizza.setCurrentSize(currentSize);
         priceLabel.setText("Price: " + pizza.price());
     }
@@ -115,8 +106,8 @@ public class ChicagoController implements Initializable {
        // HelloApplication.getCurrOrder();
         priceLabel.setText("Total: " + String.valueOf(pizza.price()) + " :" + HelloApplication.getCurrOrder().getSize());
     }
-    public static double getCurrPrice() {
-        return 0.0;
+    public String getCurrPrice() {
+        return priceLabel.getText();
     }
 
     public void addTopping(ActionEvent actionEvent) {
