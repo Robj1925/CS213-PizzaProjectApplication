@@ -32,4 +32,13 @@ public class BuildYourOwn extends Pizza{
         DecimalFormat df = new DecimalFormat("#.00");
         return Double.parseDouble(df.format(price + toppingsPrice));
     }
+    @Override
+    public String toString() {
+        return "BuildYourOwn " +
+                "(" + getStyle() +
+                " - " + getCrust() +
+                ") " +
+                "toppings = " + getToppings() +
+                '}';
+    }
 }

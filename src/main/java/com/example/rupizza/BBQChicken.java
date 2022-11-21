@@ -8,7 +8,7 @@ public class BBQChicken extends Pizza{
         add(Topping.GREENPEPPER);
         add(Topping.PROVOLONE);
         add(Topping.CHEDDAR);
-        super.printToppings();
+       // super.printToppings();
     }
 
     @Override
@@ -32,6 +32,15 @@ public class BBQChicken extends Pizza{
             price = 17.99;
         }
         return price;
+    }
+    @Override
+    public String toString() {
+        return "BBQChicken " +
+                "(" + getStyle() +
+                " - " + getCrust() +
+                ") " +
+                "toppings = " + getToppings() +
+                '}';
     }
 }
 

@@ -31,4 +31,13 @@ public class Meatzza extends Pizza{
         }
         return price;
     }
+    @Override
+    public String toString() {
+        return "Meatzza " +
+                "(" + getStyle() +
+                " - " + getCrust() +
+                ") " +
+                "toppings = " + getToppings() +
+                '}';
+    }
 }

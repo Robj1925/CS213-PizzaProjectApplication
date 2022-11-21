@@ -9,8 +9,8 @@ public class Deluxe extends Pizza{
         add(Topping.PEPPERONI);
         add(Topping.MUSHROOM);
 
-        System.out.println(super.getSize());
-        super.printToppings();
+        // System.out.println(super.getSize());
+       // super.printToppings();
 
     }
     @Override
@@ -34,6 +34,15 @@ public class Deluxe extends Pizza{
             price = 18.99;
         }
         return price;
+    }
+    @Override
+    public String toString() {
+        return "Deluxe " +
+                "(" + getStyle() +
+                " - " + getCrust() +
+                ") " +
+                "toppings = " + getToppings() +
+                '}';
     }
 
 }

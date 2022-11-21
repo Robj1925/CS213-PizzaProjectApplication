@@ -29,11 +29,12 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         PizzaFactory pizzaFactory = new ChicagoPizza();
-        Pizza pizza = pizzaFactory.createBuildYourOwn();
-        pizza.add(Topping.CHEDDAR);
+        Pizza pizza = pizzaFactory.createDeluxe();
         pizza.setCurrentSize("large");
         System.out.println(pizza.getCrust());
         System.out.println(pizza.price());
+        System.out.println(pizza.printToppings());
+        System.out.println(pizza.getStyle());
 
        // Pizza pizza1 = pizzaFactory.createMeatzza();
         //System.out.println(pizza1.price());

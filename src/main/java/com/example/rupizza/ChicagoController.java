@@ -112,7 +112,7 @@ public class ChicagoController implements Initializable {
         alert.setContentText("Pizza has been added to cart!");
         alert.showAndWait();
         order1.add(pizza);
-        HelloApplication.getCurrOrder();
+       // HelloApplication.getCurrOrder();
         priceLabel.setText("Total: " + String.valueOf(pizza.price()) + " :" + HelloApplication.getCurrOrder().getSize());
     }
     public static double getCurrPrice() {

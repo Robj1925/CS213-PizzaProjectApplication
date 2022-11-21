@@ -29,7 +29,7 @@ public class Order implements Customizable{
 
     @Override
     public String toString() {
-        return "Order{" +
+        return "This is a test" +
                 "orderNumber=" + orderNumber +
                 ", pizzas=" + pizzas +
                 '}';

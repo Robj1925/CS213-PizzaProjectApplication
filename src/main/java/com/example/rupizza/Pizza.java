@@ -21,20 +21,37 @@ public abstract class Pizza implements Customizable {
     public String getCrust() {
       return this.crust.getCrust();
     }
+    public String getStyle() {
+        if (getCrust().equals("pan") || getCrust().equals("deepdish" )|| getCrust().equals("stuffed")) {
+            return "Chicago Style";
+        } else return "NY Style";
+    }
     public String getCurrentSize() { //gets size of pizza
         return size.getCurrentSize();
     }
     public void setCurrentSize(String s) {
         this.size.setCurrentSize(s);
     }
-    public void printToppings() {
+    public String printToppings() {
+        String toppings = "";
         for (Topping t : getToppings()) {
-            System.out.println(t);
+            toppings = t + " " + toppings;
         }
+        return toppings;
     }
     public abstract double price();
 
     protected ArrayList<Topping> getToppings(){
         return toppings;
     }
+
+//    @Override
+//    public String toString() {
+//        return "(" + getStyle() +
+//                " - " + getCrust() +
+//                ") " +
+//                "toppings = " + toppings +
+//                " $" + price() +
+//                '}';
+//    }
 }
