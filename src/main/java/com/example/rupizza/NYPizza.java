@@ -4,21 +4,29 @@ public class NYPizza implements PizzaFactory{
 
     @Override
     public Pizza createDeluxe() {
-        return null;
+        Pizza pizza = new Deluxe();
+        pizza.setCrust("brooklyn");
+        return pizza;
     }
 
     @Override
     public Pizza createMeatzza() {
-        return null;
+        Pizza pizza = new Meatzza();
+        pizza.setCrust("handtossed");
+        return pizza;
     }
 
     @Override
     public Pizza createBBQChicken() {
-        return null;
+        Pizza pizza = new BBQChicken();
+        pizza.setCrust("thin");
+        return pizza;
     }
 
     @Override
     public Pizza createBuildYourOwn() {
-        return null;
+        Pizza pizza = new BuildYourOwn();
+        pizza.setCrust("handtossed");
+        return pizza;
     }
 }
