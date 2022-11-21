@@ -26,9 +26,14 @@ public class MainController {
     }
 
     @FXML
-    protected void onStoreOrderButtonClick() {
-        welcomeText.setText("Welcome to Store OrderApplication!");
-    }
+    protected void onStoreOrderButtonClick() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("current-order-view.fxml")); // use this to open up more windows
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600); // .load() makes it visible
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL); // when you open up another window you cant do anything in this window until you close that window
+        stage.setTitle("RU Pizza:Shopping Cart"); //stage is just window
+        stage.setScene(scene);
+        stage.show();    }
 
     @FXML
     protected void chicagoButtonClick() throws IOException {

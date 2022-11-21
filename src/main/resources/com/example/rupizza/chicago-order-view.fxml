@@ -7,16 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="489.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rupizza.ChicagoController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rupizza.ChicagoController">
    <children>
       <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chicago Style Order" />
-      <ListView fx:id="pizzaview" layoutX="20.0" layoutY="77.0" prefHeight="200.0" prefWidth="200.0" />
-      <ComboBox fx:id="flavorBox" layoutX="45.0" layoutY="398.0" onAction="#selectFlavor" prefWidth="150.0" />
-      <ComboBox fx:id="pizzaSize" layoutX="213.0" layoutY="398.0" onAction="#selectSize" prefWidth="150.0" />
-      <Button fx:id="addPizza" layoutX="461.0" layoutY="398.0" mnemonicParsing="false" onAction="#addPizzaToOrder" text="Add To Cart" />
-      <Label fx:id="priceLabel" layoutX="71.0" layoutY="442.0" prefHeight="18.0" prefWidth="470.0" text="this shit not working" />
+      <ListView fx:id="availToppingsLst" layoutX="20.0" layoutY="77.0" prefHeight="200.0" prefWidth="200.0" />
+      <ComboBox fx:id="flavorBox" layoutX="27.0" layoutY="297.0" onAction="#selectFlavor" prefWidth="150.0" />
+      <ComboBox fx:id="pizzaSize" layoutX="195.0" layoutY="297.0" onAction="#selectSize" prefWidth="150.0" />
+      <Button fx:id="addPizza" layoutX="27.0" layoutY="448.0" mnemonicParsing="false" onAction="#addPizzaToOrder" text="Add To Cart" />
+      <Label fx:id="priceLabel" layoutX="20.0" layoutY="419.0" prefHeight="18.0" prefWidth="255.0" text="this shit not working" />
       <Label layoutX="20.0" layoutY="60.0" prefHeight="18.0" prefWidth="114.0" text="Toppings Selection" />
-      <ListView layoutX="385.0" layoutY="77.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="selectedToppingsView" layoutX="385.0" layoutY="77.0" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="385.0" layoutY="61.0" prefHeight="18.0" prefWidth="125.0" text="Toppings Selected" />
+      <Label fx:id="crustLabel" layoutX="385.0" layoutY="288.0" prefHeight="18.0" prefWidth="179.0" text="Crust:" />
+      <Button fx:id="addBotton" layoutX="249.0" layoutY="132.0" mnemonicParsing="false" onAction="#addTopping" text="Add Topping" />
+      <Button fx:id="removeButton" layoutX="249.0" layoutY="194.0" mnemonicParsing="false" onAction="#removeTopping" text="Remove Topping" />
    </children>
 </AnchorPane>
