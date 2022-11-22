@@ -38,6 +38,7 @@ public class Meatzza extends Pizza{
                 " - " + getCrust() +
                 ") " +
                 "toppings = " + getToppings() +
+                " $" + price() +
                 '}';
     }
 }

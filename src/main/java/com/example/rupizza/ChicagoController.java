@@ -50,7 +50,9 @@ public class ChicagoController implements Initializable {
         pizzaSize.setItems(sizes);
 
         pizzaSize.getSelectionModel().selectFirst();
+      //  flavorBox.getSelectionModel().selectFirst();
         currentSize = "small";
+       // pizza = pizzaFactory.createDeluxe();
 
      //   HelloApplication.setCurrOrder(order1);
         order1 = HelloApplication.getCurrOrder();
@@ -59,7 +61,9 @@ public class ChicagoController implements Initializable {
     }
 
     public void selectFlavor(ActionEvent actionEvent) {
-        String pizzaSelected = flavorBox.getSelectionModel().getSelectedItem().toString(); // gets string of whatever flavor is selected
+        System.out.println("selectFlavor is being called");
+        String pizzaSelected = "";
+        if (flavorBox.getValue() != null) pizzaSelected = flavorBox.getSelectionModel().getSelectedItem().toString(); // gets string of whatever flavor is selected
         if (pizzaSelected.equals("Deluxe")) { //checks if deluxe is selected
             pizza = pizzaFactory.createDeluxe(); //creats pizza with deluxe toppings
             availToppingsLst.getItems().setAll(noToppings); //makes no toppings availble to be selected
@@ -102,9 +106,12 @@ public class ChicagoController implements Initializable {
         alert.setTitle("Pizza Added!");
         alert.setContentText("Pizza has been added to cart!");
         alert.showAndWait();
+        pizza.setCurrentSize(currentSize);
         order1.add(pizza);
-       // HelloApplication.getCurrOrder();
-        priceLabel.setText("Total: " + String.valueOf(pizza.price()) + " :" + HelloApplication.getCurrOrder().getSize());
+        flavorBox.getSelectionModel().clearSelection();
+
+
+        priceLabel.setText("Total: 0.00" + " :" + HelloApplication.getCurrOrder().getSize());
     }
     public String getCurrPrice() {
         return priceLabel.getText();

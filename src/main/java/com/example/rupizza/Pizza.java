@@ -45,13 +45,5 @@ public abstract class Pizza implements Customizable {
         return toppings;
     }
 
-//    @Override
-//    public String toString() {
-//        return "(" + getStyle() +
-//                " - " + getCrust() +
-//                ") " +
-//                "toppings = " + toppings +
-//                " $" + price() +
-//                '}';
-//    }
+
 }

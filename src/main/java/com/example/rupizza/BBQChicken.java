@@ -40,6 +40,7 @@ public class BBQChicken extends Pizza{
                 " - " + getCrust() +
                 ") " +
                 "toppings = " + getToppings() +
+                " $" + price() +
                 '}';
     }
 }

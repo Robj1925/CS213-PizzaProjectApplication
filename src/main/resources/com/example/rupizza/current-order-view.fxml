@@ -22,7 +22,7 @@
       <Text fx:id="subTotalTextF" layoutX="26.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal: " wrappingWidth="69.48516845703125" />
       <Text fx:id="salesTaxField" layoutX="119.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales Tax" />
       <Button fx:id="removePizza" layoutX="494.0" layoutY="350.0" mnemonicParsing="false" onAction="#removePizza" text="Remove Pizza" />
-      <Button fx:id="placeOrder" layoutX="382.0" layoutY="385.0" mnemonicParsing="false" text="Place Order" />
+      <Button fx:id="placeOrder" layoutX="382.0" layoutY="385.0" mnemonicParsing="false" onAction="#placeOrder" text="Place Order" />
       <Button fx:id="clearOrder" layoutX="494.0" layoutY="386.0" mnemonicParsing="false" onAction="#clearOrder" text="Clear Order" />
       <Text fx:id="totalTextF" layoutX="26.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" />
    </children>

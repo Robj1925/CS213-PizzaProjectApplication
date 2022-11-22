@@ -42,6 +42,7 @@ public class Deluxe extends Pizza{
                 " - " + getCrust() +
                 ") " +
                 "toppings = " + getToppings() +
+                " $" + price() +
                 '}';
     }
 

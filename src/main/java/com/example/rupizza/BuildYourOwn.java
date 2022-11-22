@@ -34,11 +34,12 @@ public class BuildYourOwn extends Pizza{
     }
     @Override
     public String toString() {
-        return "BuildYourOwn " +
+        return "BYO " +
                 "(" + getStyle() +
                 " - " + getCrust() +
                 ") " +
                 "toppings = " + getToppings() +
+                " $" + price() +
                 '}';
     }
 }
