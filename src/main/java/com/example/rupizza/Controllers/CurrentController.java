@@ -3,6 +3,7 @@ package com.example.rupizza.Controllers;
 import com.example.rupizza.HelloApplication;
 import com.example.rupizza.Order;
 import com.example.rupizza.Pizza;
+import com.example.rupizza.Utilities.mySQLConnectionUtility;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -73,7 +74,16 @@ public class CurrentController implements Initializable {
 
     @FXML
     void placeOrder(ActionEvent event) {
-        //move to currentOrder to StoreOrders class
+        //move to currentOrder to StoreOrders class : OLD PROJECT
+        // TODO: Move currentOrder to database: NEW project
+
+        try {
+            System.out.println(mySQLConnectionUtility.setOrder(HelloApplication.getCurrOrder()));
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
         HelloApplication.addOrderToStore(HelloApplication.getCurrOrder());
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 

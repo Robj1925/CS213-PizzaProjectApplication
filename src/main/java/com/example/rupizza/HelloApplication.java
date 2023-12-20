@@ -46,7 +46,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-       mySQLConnectionUtility.getConnection();
+    //   mySQLConnectionUtility.getConnection();
         // test case 1
 //        Pizza testCase1 = new BuildYourOwn();
 //        testCase1.setCrust("pan");

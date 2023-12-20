@@ -1,6 +1,8 @@
 package com.example.rupizza;
 
-public class NYPizza implements PizzaFactory{
+import com.example.rupizza.interfaces.PizzaFactory;
+
+public class NYPizza implements PizzaFactory {
 
     @Override
     public Pizza createDeluxe() {

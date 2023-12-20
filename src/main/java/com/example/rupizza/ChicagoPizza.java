@@ -1,6 +1,8 @@
 package com.example.rupizza;
 
-public class ChicagoPizza implements PizzaFactory{
+import com.example.rupizza.interfaces.PizzaFactory;
+
+public class ChicagoPizza implements PizzaFactory {
 
     @Override
     public Pizza createDeluxe() { //creates Chicago Style Deluxe flavor with preset toppings and Crust

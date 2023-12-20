@@ -1,4 +1,6 @@
 package com.example.rupizza;
+import com.example.rupizza.interfaces.Customizable;
+
 import java.util.ArrayList;
 
 public abstract class Pizza implements Customizable {

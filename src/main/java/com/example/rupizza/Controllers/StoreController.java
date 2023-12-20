@@ -30,8 +30,6 @@ public class StoreController implements Initializable {
         allOrders.setAll(HelloApplication.getAllOrders());
         orderNumber.setItems(HelloApplication.getAllOrders());
         orderNumber.setItems(allOrders);
-      //  allStoreOrders.setItems(allOrders);
-
     }
 
     @FXML
@@ -46,9 +44,7 @@ public class StoreController implements Initializable {
         } else {
             currOrderSelectedPizzas.setItems(null);
         }
-
        // System.out.println(allStoreOrders.);
-
     }
 
     @FXML
@@ -65,11 +61,9 @@ public class StoreController implements Initializable {
         alert.setTitle("Order Removed!");
         alert.setContentText("Order has been removed from current orders! Please refresh window!");
         alert.showAndWait();
-        //TODO: UPDATE SCREEN, order is removed
-        // ObservableList<Order> allOrders = FXCollections.observableArrayList();
-       // allOrders.setAll(HelloApplication.getAllOrders());
+        //TODO: Delete Orders From Database
         orderNumber.setItems(HelloApplication.getAllOrders());
-      //  orderSelected = (Order)orderNumber.getSelectionModel().getSelectedItem();
+
 
     }
 }

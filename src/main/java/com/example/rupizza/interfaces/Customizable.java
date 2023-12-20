@@ -1,4 +1,4 @@
-package com.example.rupizza;
+package com.example.rupizza.interfaces;
 
 public interface Customizable<E> {
     boolean add(Object obj);

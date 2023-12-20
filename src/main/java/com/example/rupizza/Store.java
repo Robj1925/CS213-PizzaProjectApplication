@@ -1,5 +1,6 @@
 package com.example.rupizza;
 
+import com.example.rupizza.interfaces.Customizable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
