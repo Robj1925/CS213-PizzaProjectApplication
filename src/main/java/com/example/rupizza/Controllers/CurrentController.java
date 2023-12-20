@@ -1,5 +1,8 @@
-package com.example.rupizza;
+package com.example.rupizza.Controllers;
 
+import com.example.rupizza.HelloApplication;
+import com.example.rupizza.Order;
+import com.example.rupizza.Pizza;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

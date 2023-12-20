@@ -1,5 +1,6 @@
-package com.example.rupizza;
+package com.example.rupizza.Controllers;
 
+import com.example.rupizza.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,7 +11,7 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ChicagoController implements Initializable {
+public class NewYorkController implements Initializable {
     @FXML
     public Button addButton;
     @FXML
@@ -25,7 +26,7 @@ public class ChicagoController implements Initializable {
 
     private Pizza pizza;
     private String currentSize = "";
-    private PizzaFactory pizzaFactory = new ChicagoPizza();
+    private PizzaFactory pizzaFactory = new NYPizza();
     private ObservableList<Topping> availableToppings = FXCollections.observableArrayList(Topping.CHEDDAR,Topping.BEEF,Topping.BBQCHICKEN,Topping.GREENPEPPER,Topping.HAM,Topping.MUSHROOM,Topping.ONION,Topping.PEPPERONI,Topping.PROVOLONE,Topping.SAUSAGE,Topping.BLACKOLIVES,Topping.SPINACH,Topping.PINEAPPLE);
     private ObservableList<Topping> deluxeToppings = FXCollections.observableArrayList(Topping.GREENPEPPER,Topping.MUSHROOM,Topping.ONION,Topping.PEPPERONI,Topping.SAUSAGE);
     private ObservableList<Topping> meatzzaToppings = FXCollections.observableArrayList(Topping.BEEF,Topping.HAM,Topping.PEPPERONI,Topping.SAUSAGE);
@@ -49,21 +50,21 @@ public class ChicagoController implements Initializable {
         ObservableList<String> sizes = FXCollections.observableArrayList("small","medium","large");
         pizzaSize.setItems(sizes);
 
-        pizzaSize.getSelectionModel().selectFirst();
-      //  flavorBox.getSelectionModel().selectFirst();
-        currentSize = "small";
-       // pizza = pizzaFactory.createDeluxe();
+       pizzaSize.getSelectionModel().selectFirst();
+        //flavorBox.getSelectionModel().selectFirst();
+         currentSize = "small";
+        //pizza = pizzaFactory.createDeluxe();
+       // priceLabel.setText("Price: " + pizza.price());
 
-     //   HelloApplication.setCurrOrder(order1);
+        //   HelloApplication.setCurrOrder(order1);
         order1 = HelloApplication.getCurrOrder();
 
 
     }
 
     public void selectFlavor(ActionEvent actionEvent) {
-        System.out.println("selectFlavor is being called");
         String pizzaSelected = "";
-        if (flavorBox.getValue() != null) pizzaSelected = flavorBox.getSelectionModel().getSelectedItem().toString(); // gets string of whatever flavor is selected
+        if (flavorBox.getValue() != null) pizzaSelected = flavorBox.getSelectionModel().getSelectedItem().toString();
         if (pizzaSelected.equals("Deluxe")) { //checks if deluxe is selected
             pizza = pizzaFactory.createDeluxe(); //creats pizza with deluxe toppings
             availToppingsLst.getItems().setAll(noToppings); //makes no toppings availble to be selected
@@ -106,10 +107,9 @@ public class ChicagoController implements Initializable {
         alert.setTitle("Pizza Added!");
         alert.setContentText("Pizza has been added to cart!");
         alert.showAndWait();
-        pizza.setCurrentSize(currentSize);
         order1.add(pizza);
-        flavorBox.getSelectionModel().clearSelection();
 
+        flavorBox.getSelectionModel().clearSelection();
 
         priceLabel.setText("Total: 0.00" + " :" + HelloApplication.getCurrOrder().getSize());
     }

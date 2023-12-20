@@ -6,4 +6,6 @@ module com.example.rupizza {
 
     opens com.example.rupizza to javafx.fxml;
     exports com.example.rupizza;
+    exports com.example.rupizza.Controllers;
+    opens com.example.rupizza.Controllers to javafx.fxml;
 }

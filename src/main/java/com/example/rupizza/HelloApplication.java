@@ -1,5 +1,6 @@
 package com.example.rupizza;
 
+import com.example.rupizza.Utilities.mySQLConnectionUtility;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -45,22 +46,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        String url = "jdbc:mysql://127.0.0.1:3306/orders";
-        try {
-           // Class.forName("com.mysql.cj.jdbc.Driver");
-
-            Connection connection = DriverManager.getConnection(url, "root", "");
-
-            Statement statement = connection.createStatement();
-
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM orders.order");
-
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString("total"));
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+       mySQLConnectionUtility.getConnection();
         // test case 1
 //        Pizza testCase1 = new BuildYourOwn();
 //        testCase1.setCrust("pan");

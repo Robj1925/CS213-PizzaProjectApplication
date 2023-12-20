@@ -36,7 +36,7 @@ public class Order implements Customizable{
     @Override
     public String toString() {
         return
-                " :" + orderNumber ;
+                " " + orderNumber ;
     }
 
     @Override
