@@ -9,6 +9,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import com.example.rupizza.Utilities.mySQLConnectionUtility;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,24 +29,37 @@ public class StoreController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<Order> allOrders = FXCollections.observableArrayList();
-        allOrders.setAll(HelloApplication.getAllOrders());
-        orderNumber.setItems(HelloApplication.getAllOrders());
-        orderNumber.setItems(allOrders);
+  //BEfore
+//        allOrders.setAll(HelloApplication.getAllOrders());
+//        orderNumber.setItems(HelloApplication.getAllOrders());
+//        orderNumber.setItems(allOrders);
+// AFTER
+        try {
+          //  allOrders.setAll(mySQLConnectionUtility.getOrders());
+            orderNumber.setItems((ObservableList) mySQLConnectionUtility.getOrders());
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     @FXML
     public void orderChosen(ActionEvent actionEvent) {
 
-        orderSelected = (Order)orderNumber.getSelectionModel().getSelectedItem();
-        System.out.println(orderSelected);
-        if (orderSelected != null) {
-            currOrderSelectedPizzas.setItems(orderSelected.getPizzas());
-            total.setText("Order Total: $" + orderSelected.getTotal());
+//        BEFORE:
+//        orderSelected = (Order)orderNumber.getSelectionModel().getSelectedItem();
+//        System.out.println(orderSelected);
+//        if (orderSelected != null) {
+//            currOrderSelectedPizzas.setItems(orderSelected.getPizzas());
+//            total.setText("Order Total: $" + orderSelected.getTotal());
+//        } else {
+//            currOrderSelectedPizzas.setItems(null);
+//        }
+//        AFTER:
+        orderSelected = (Order) orderNumber.getSelectionModel().getSelectedItem();
+        total.setText("Order Total: $" + orderSelected.getTotal());
 
-        } else {
-            currOrderSelectedPizzas.setItems(null);
-        }
-       // System.out.println(allStoreOrders.);
     }
 
     @FXML
